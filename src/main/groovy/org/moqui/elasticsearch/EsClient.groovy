@@ -30,6 +30,8 @@ import org.elasticsearch.index.query.QueryBuilder
 
 @CompileStatic
 interface EsClient {
+    Object getClient()
+
     boolean checkIndexExists(String indexName)
     void checkCreateIndex(String indexName)
     void checkCreateDocIndex(String dataDocumentId)

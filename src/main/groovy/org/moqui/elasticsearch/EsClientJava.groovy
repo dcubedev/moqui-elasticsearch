@@ -49,6 +49,11 @@ class EsClientJava implements EsClient {
     }
 
     @Override
+    Object getClient() {
+        return client
+    }
+
+    @Override
     boolean checkIndexExists(String indexName) {
         if (client.admin().indices().prepareAliasesExist(indexName).get().exists) return true
         return client.admin().indices().prepareExists(indexName).get().exists

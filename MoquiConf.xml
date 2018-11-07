@@ -8,8 +8,10 @@
     <!-- ElasticSearch modes:
         embedded: full or coordinating node depending on configuration in elasticsearch.yml
         rest: REST (over HTTP) client, uses ES Java REST Client
+
+        <default-property name="elasticsearch_mode" value="embedded"/>
     -->
-    <default-property name="elasticsearch_mode" value="embedded"/>
+    <default-property name="elasticsearch_mode" value="rest"/>
     <!-- ElasticSearch hosts for elasticsearch_mode=rest, looks for elasticsearch_host${[1-9]} -->
     <default-property name="elasticsearch_host1" value="http://localhost:9200"/>
     <default-property name="elasticsearch_host2" value=""/>

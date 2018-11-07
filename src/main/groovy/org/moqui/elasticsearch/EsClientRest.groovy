@@ -58,6 +58,11 @@ class EsClientRest implements EsClient {
     }
 
     @Override
+    Object getClient() {
+        return client
+    }
+
+    @Override
     boolean checkIndexExists(String indexName) {
         if (client.indices().existsAlias(new GetAliasesRequest(indexName))) return true
         return client.indices().exists(new GetIndexRequest().indices(indexName))
